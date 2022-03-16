@@ -34,16 +34,11 @@ function getPokemon(pokemonID, shiny) {
         let nameElement = document.createElement('h3');
         nameElement.innerText = name.toUpperCase();
         nameElement.setAttribute('style', `text-align: center;`)
+        newElement.setAttribute("title", name);
 
-        if(!shiny) {
-        newElement.setAttribute("src", frontImg);
-        newElement.setAttribute("title", name);
-        }
+        newElement.setAttribute("src", shiny? shinyFrontImg : frontImg);
+
         
-        else {
-        newElement.setAttribute("src", shinyFrontImg);
-        newElement.setAttribute("title", name);
-        }
 
         pokemonSpriteArea.appendChild(nameElement);
         pokemonSpriteArea.appendChild(newElement);
